@@ -12,7 +12,7 @@ class PerpusController extends Controller
     public function index()
     {
         $perpuses = Perpus::latest()->paginate(5);
-        return view('perpustakaan.index',compact('perpuses'))
+        return view('perpus.index',compact('perpus'))
         ->with('i', (request()->input('page',1)-1)*5);
     }
     /**
@@ -22,7 +22,7 @@ class PerpusController extends Controller
      */
     public function create()
     {
-        return view('perpustakaan.create');
+        return view('perpus.create');
     }
     /**
      * Store a newly created resource in storage.
